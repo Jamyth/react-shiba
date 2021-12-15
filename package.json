@@ -1,7 +1,7 @@
 {
     "name": "react-shiba",
     "version": "1.0.0",
-    "main": "dist/index.js",
+    "main": "build/index.js",
     "license": "MIT",
     "scripts": {
         "run-script": "ts-node --project config/tsconfig.script.json",
@@ -11,15 +11,27 @@
         "test": "TS_NODE_PROJECT='./config/tsconfig.test.json' mocha --require ts-node/register ./test/**/*.test.ts"
     },
     "files": [
-        "dist/**"
+        "build/**"
     ],
     "devDependencies": {
-        "@iamyth/logger": "1.0.4",
+        "@iamyth/logger": "1.0.6",
         "@iamyth/prettier-config": "0.0.1",
-        "@types/node": "16.11.12",
+        "@types/node": "16.11.13",
+        "@types/react": "17.0.37",
+        "@types/react-dom": "17.0.11",
         "eslint-config-iamyth": "0.0.9",
         "prettier": "2.5.1",
         "ts-node": "10.4.0",
         "typescript": "4.5.4"
+    },
+    "dependencies": {
+        "@react-rxjs/core": "0.8.4",
+        "@react-rxjs/utils": "0.9.3",
+        "axios": "0.24.0",
+        "immer": "9.0.7",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-router": "6.1.1",
+        "rxjs": "7.4.0"
     }
 }
