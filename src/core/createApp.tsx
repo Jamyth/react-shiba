@@ -11,7 +11,7 @@ import { captureError } from '../utils/captureError';
 interface AppOptions {
     Component: React.ComponentType<any>;
     errorHandler: ErrorHandler;
-    entryElement?: HTMLElement;
+    entryElement?: HTMLElement | null;
 }
 
 interface ApplicationProps {

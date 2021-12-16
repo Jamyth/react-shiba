@@ -3,7 +3,7 @@ import { bind } from '@react-rxjs/core';
 import { createSignal } from '@react-rxjs/utils';
 import type { Update } from 'history';
 
-const history = createBrowserHistory();
+const history = createBrowserHistory({ window });
 const [update$, setUpdate] = createSignal<Update>();
 
 history.listen(setUpdate);
