@@ -29,11 +29,11 @@ function createElement() {
 
 function Application({ component: Component }: ApplicationProps) {
     return (
-        <Router>
-            <ErrorBoundary>
+        <ErrorBoundary>
+            <Router>
                 <Component />
-            </ErrorBoundary>
-        </Router>
+            </Router>
+        </ErrorBoundary>
     );
 }
 

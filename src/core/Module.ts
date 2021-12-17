@@ -13,7 +13,6 @@ enableES5();
 export class Module<Path extends string, State extends object, HistoryState extends object = any> {
     readonly useState: () => State;
     readonly path: Path | null;
-    readonly initialState: State;
     private readonly observer$: Observable<State>;
     private readonly setter: (state: State) => void;
     private moduleState: State;
@@ -26,7 +25,6 @@ export class Module<Path extends string, State extends object, HistoryState exte
         const [useState, observer$] = bind(_observer$, initialState);
 
         this.path = path;
-        this.initialState = initialState;
         this.useState = useState;
         this.observer$ = observer$;
         this.setter = setter;

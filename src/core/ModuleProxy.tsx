@@ -22,11 +22,11 @@ export class ModuleProxy<M extends Module<any, any>> {
             static displayName = `Module[${name}]`;
 
             override componentDidMount() {
-                lifecycleListener.onEnter();
                 lifecycleListener.subscribe();
                 if (this.hasOwnLifecycle('onTick')) {
                     lifecycleListener.subscribeOnTickLifecycle();
                 }
+                lifecycleListener.onEnter();
             }
 
             override componentWillUnmount() {
