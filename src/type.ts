@@ -7,7 +7,7 @@ export type Location<S> = Omit<HistoryLocation, 'state'> & {
 
 export type StateMode = 'keep-state';
 
-export type ActionHandler = (...args: any[]) => void;
+export type ActionHandler = (...args: any[]) => any;
 
 export type HandlerKeys<M> = { [K in keyof M]: M[K] extends (...args: any[]) => void ? K : never }[Exclude<
     keyof M,
