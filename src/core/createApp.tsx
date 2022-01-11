@@ -72,6 +72,8 @@ function setGlobalErrorHandler() {
 export function createApp({ Component, entryElement, errorHandler }: AppOptions) {
     const element = entryElement || createElement();
 
+    ReactDOM.render(<Application component={Component} />, element);
+
     errorObserver
         .pipe(filter((exceptionOrNull): exceptionOrNull is Exception => exceptionOrNull !== null))
         .subscribe((exception) => {
@@ -79,5 +81,4 @@ export function createApp({ Component, entryElement, errorHandler }: AppOptions)
         });
 
     setGlobalErrorHandler();
-    ReactDOM.render(<Application component={Component} />, element);
 }
