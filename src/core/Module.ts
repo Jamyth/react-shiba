@@ -20,7 +20,7 @@ export class Module<Path extends string, State extends object, HistoryState exte
     private historyStateSubscription: Subscription | null;
     private onTickSubscription: Subscription | null;
 
-    constructor(path: Path extends never ? null : Path, initialState: State) {
+    constructor(path: Path | null, initialState: State) {
         const [_observer$, setter] = createSignal<State>();
         const [useState, observer$] = bind(_observer$, initialState);
 
