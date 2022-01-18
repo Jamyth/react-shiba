@@ -1,6 +1,6 @@
 import type { TickIntervalDecoratorFlag } from '../../type';
 
-type ActionHandler = (...args: any[]) => void;
+type ActionHandler = (...args: any[]) => any;
 
 type OnTickHandlerDecorator = (
     target: object,

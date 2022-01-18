@@ -74,7 +74,7 @@ export class Module<Path extends string, State extends object, HistoryState exte
     }
 
     subscribeOnTickLifecycle() {
-        const onTick = (this as ModuleLifecycleListener).onTick;
+        const onTick = (this as ModuleLifecycleListener).onTick.bind(this);
         const delay = (onTick.tickInterval || 5) * 1000;
         this.onTickSubscription = interval(delay)
             .pipe(startWith(0))
