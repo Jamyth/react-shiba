@@ -7,6 +7,7 @@ export * from './state/error';
 export * from './state/loading';
 export * from './utils/decorators/createActionHandler';
 export * from './utils/decorators/Loading';
+export * from './utils/decorators/Interval';
 export * from './utils/hooks/useObjectKeyAction';
 export * from './utils/async';
 export * from './utils/ErrorHandler';
