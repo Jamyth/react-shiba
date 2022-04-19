@@ -9,7 +9,7 @@ build/
 *.DS_Store
 
 # logs
-*/npm-debug.log
-*/yarn-error.log
+**/npm-debug.log
+**/yarn-error.log
 
 .vscode

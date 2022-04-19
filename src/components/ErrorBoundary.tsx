@@ -4,6 +4,7 @@ import type { Exception } from '../utils/Exceptions';
 
 interface Props {
     render: (exception: Exception) => React.ReactElement | null;
+    children?: React.ReactNode;
 }
 
 interface State {

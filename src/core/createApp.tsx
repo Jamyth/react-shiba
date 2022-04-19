@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { ErrorHandler } from '../utils/ErrorHandler';
 import { errorObserver } from '../state/error';
 import { filter } from 'rxjs/operators';
@@ -72,7 +72,7 @@ function setGlobalErrorHandler() {
 export function createApp({ Component, entryElement, errorHandler }: AppOptions) {
     const element = entryElement || createElement();
 
-    ReactDOM.render(<Application component={Component} />, element);
+    ReactDOM.createRoot(element).render(<Application component={Component} />);
 
     errorObserver
         .pipe(filter((exceptionOrNull): exceptionOrNull is Exception => exceptionOrNull !== null))

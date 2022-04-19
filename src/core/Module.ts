@@ -68,7 +68,7 @@ export class Module<Path extends string, State extends object, HistoryState exte
         ).subscribe((pathMatch) => {
             if (pathMatch) {
                 const { params } = pathMatch;
-                this.onLocationMatched(params as unknown as PathParam<Path>, history.location);
+                this.onLocationMatched(params as unknown as PathParam<Path>, history.location as any);
             }
         });
     }
