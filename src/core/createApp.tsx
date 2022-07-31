@@ -12,10 +12,12 @@ interface AppOptions {
     Component: React.ComponentType<any>;
     errorHandler: ErrorHandler;
     entryElement?: HTMLElement | null;
+    withReactRouter?: boolean;
 }
 
 interface ApplicationProps {
     component: React.ComponentType<any>;
+    withReactRouter: boolean;
 }
 
 function createElement() {
@@ -27,12 +29,16 @@ function createElement() {
     return div;
 }
 
-function Application({ component: Component }: ApplicationProps) {
+function Application({ component: Component, withReactRouter }: ApplicationProps) {
     return (
         <ErrorBoundary>
-            <Router>
+            {withReactRouter ? (
+                <Router>
+                    <Component />
+                </Router>
+            ) : (
                 <Component />
-            </Router>
+            )}
         </ErrorBoundary>
     );
 }
@@ -69,10 +75,10 @@ function setGlobalErrorHandler() {
     );
 }
 
-export function createApp({ Component, entryElement, errorHandler }: AppOptions) {
+export function createApp({ Component, entryElement, errorHandler, withReactRouter = true }: AppOptions) {
     const element = entryElement || createElement();
 
-    ReactDOM.createRoot(element).render(<Application component={Component} />);
+    ReactDOM.createRoot(element).render(<Application withReactRouter={withReactRouter} component={Component} />);
 
     errorObserver
         .pipe(filter((exceptionOrNull): exceptionOrNull is Exception => exceptionOrNull !== null))

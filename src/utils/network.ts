@@ -83,6 +83,7 @@ export async function ajax<Request, Response, Path extends string>(
     config.headers = {
         'Content-Type': APPLICATION_JSON,
         Accept: APPLICATION_JSON,
+        ...(extraConfig.headers ?? {}),
     };
 
     const response = await axios.request(config);

@@ -1,6 +1,6 @@
 {
     "name": "react-shiba",
-    "version": "1.1.0",
+    "version": "1.1.4",
     "main": "build/index.js",
     "license": "MIT",
     "scripts": {
@@ -20,18 +20,25 @@
         "eslint-config-iamyth": "0.0.9",
         "prettier": "2.6.2",
         "ts-node": "10.7.0",
-        "typescript": "4.6.3"
-    },
-    "dependencies": {
+        "typescript": "4.6.3",
         "@react-rxjs/core": "0.9.5",
         "@react-rxjs/utils": "0.9.5",
         "@types/react": "18.0.5",
         "@types/react-dom": "18.0.1",
-        "axios": "0.26.1",
-        "immer": "9.0.12",
         "react": "18.0.0",
         "react-dom": "18.0.0",
-        "react-router": "6.3.0",
-        "rxjs": "7.5.5"
+        "react-router": "6.3.0"
+    },
+    "dependencies": {
+        "axios": "0.26.1",
+        "immer": "9.0.12",
+        "rxjs": "7.5.5",
+        "@react-rxjs/core": "0.9.5",
+        "@react-rxjs/utils": "0.9.5"
+    },
+    "peer-dependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-router": "^6.3.0"
     }
 }
